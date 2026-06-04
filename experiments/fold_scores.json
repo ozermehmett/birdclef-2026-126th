@@ -1,0 +1,100 @@
+{
+  "metric": "non-S22 macro AUC",
+  "num_classes": 234,
+  "n_folds": 5,
+  "rounds": {
+    "R1": {
+      "backbone": "tf_efficientnet_b0.ns_jft_in1k",
+      "technique": "SupCon + Memory Bank",
+      "data": "clean focal + labeled soundscapes",
+      "fold_scores": {
+        "F0": 0.9121,
+        "F1": 0.8901,
+        "F2": 0.9112,
+        "F3": 0.8875,
+        "F4": 0.9224
+      },
+      "mean": 0.9047
+    },
+    "R2": {
+      "backbone": "tf_efficientnet_b0.ns_jft_in1k",
+      "technique": "Noisy Student",
+      "data": "clean focal + labeled soundscapes",
+      "fold_scores": {
+        "F0": 0.8903,
+        "F1": 0.9352,
+        "F2": 0.9056,
+        "F3": 0.8881,
+        "F4": 0.9228
+      },
+      "mean": 0.9084
+    },
+    "R5": {
+      "backbone": "tf_efficientnet_b0.ns_jft_in1k",
+      "technique": "SWA (Stochastic Weight Averaging)",
+      "data": "clean focal + labeled soundscapes",
+      "fold_scores": {
+        "F0": 0.9015,
+        "F1": 0.8788,
+        "F2": 0.9102,
+        "F3": 0.8825,
+        "F4": 0.9239
+      },
+      "mean": 0.8994
+    },
+    "R6": {
+      "backbone": "convnext_tiny",
+      "technique": "Clean baseline",
+      "data": "clean focal + labeled soundscapes",
+      "fold_scores": {
+        "F0": 0.9000,
+        "F1": 0.8773,
+        "F2": 0.8673,
+        "F3": 0.9048,
+        "F4": 0.8973
+      },
+      "mean": 0.8893
+    },
+    "R7": {
+      "backbone": "convnext_tiny",
+      "technique": "Pseudo labeling (R1 pseudo labels)",
+      "data": "R1 pseudo-labeled + clean focal",
+      "fold_scores": {
+        "F0": 0.9129,
+        "F1": 0.8692,
+        "F2": 0.8890,
+        "F3": 0.9146,
+        "F4": 0.9077
+      },
+      "mean": 0.8987
+    },
+    "R8": {
+      "backbone": "tf_efficientnet_b0.ns_jft_in1k",
+      "technique": "Pseudo labeling (R7 pseudo labels)",
+      "data": "R7 pseudo-labeled + clean focal",
+      "fold_scores": {
+        "F0": 0.8917,
+        "F1": 0.8975,
+        "F2": 0.9101,
+        "F3": 0.9075,
+        "F4": 0.9216
+      },
+      "mean": 0.9057
+    }
+  },
+  "final_ensemble": {
+    "strategy": "best-per-fold B0",
+    "selection": {
+      "F0": {"model": "R1", "score": 0.9121},
+      "F1": {"model": "R2", "score": 0.9352},
+      "F2": {"model": "R1", "score": 0.9112},
+      "F3": {"model": "R8", "score": 0.9075},
+      "F4": {"model": "R5", "score": 0.9239}
+    },
+    "mean_ns22": 0.9180,
+    "lb_score": 0.949,
+    "final_rank": 135,
+    "total_teams": 4243,
+    "medal": "Silver"
+  }
+}

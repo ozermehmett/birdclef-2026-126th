@@ -1,0 +1,41 @@
+# Model checkpoints (too large for git)
+*.pt
+*.pth
+*.onnx
+*.pkl
+
+# Cache files
+*.npz
+*.parquet
+waveform_cache/
+unlabeled_sc_cache/
+perch_cache/
+
+# Data
+*.ogg
+*.mp3
+*.wav
+birdclef-2026/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Logs
+*.log
+outputs/logs/
+
+# Colab
+.config/
+
+# OS
+.DS_Store
+Thumbs.db
