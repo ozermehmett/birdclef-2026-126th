@@ -1,9 +1,9 @@
-# BirdCLEF+ 2026 — 135th Place Solution
+# BirdCLEF+ 2026 — 126th Place Solution
 
 **Competition:** [BirdCLEF+ 2026](https://www.kaggle.com/competitions/birdclef-2026)  
 **Task:** Acoustic species identification in the Pantanal, South America — 234 species, multi-label  
 **Metric:** Macro AUC (non-S22 soundscape windows)  
-**Final Score:** 0.949 Public LB · 0.944 Private LB · 135th / 4243 teams  
+**Final Score:** 0.949 Public LB · 0.944 Private LB · 126th / 4085 teams  
 **Hardware:** Google Colab Pro+ (A100 for training, T4 fallback)  
 **Inference:** Kaggle CPU (90-minute limit)
 
@@ -307,7 +307,7 @@ At 0.949, the SED branch was saturated. The real score ceiling was determined by
 ## Repository Structure
 
 ```
-birdclef-2026-135th/
+birdclef-2026-126th/
 ├── README.md
 ├── .gitignore
 ├── training/
